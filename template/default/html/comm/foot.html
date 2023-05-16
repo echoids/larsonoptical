@@ -2,24 +2,24 @@
 <div class="footer mt-3 pt-5 border-top text-secondary bg-light">
 	<div class="container">
     	<div class="row pb-5">
-<!--            <div class="col-12 col-md-5">-->
+            <div class="col-12 col-md-5">
+                <ul class="navbar-nav">
+                    <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
+                        <a class="nav-link" href="{pboot:sitepath}/" >home</a>
+                    </li>
+                    {pboot:nav num=10 parent=0}
+                    <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
+                        <a class="nav-link" href="[nav:link]">[nav:name]</a>
+                    </li>
+                    {/pboot:nav}
+                </ul>
 <!--            	<h5>{pboot:companyname}</h5>-->
 <!--                <ul class="lh-2">-->
 <!--                	<li>营业执照：{pboot:companyblicense}  </li>-->
 <!--                    <li>备案号码：<a href="http://beian.miit.gov.cn/" target="_blank">{pboot:siteicp}</a> </li>-->
 <!--                    <li>地址：{pboot:companyaddress} </li>-->
 <!--                </ul>-->
-<!--            </div>-->
-            <ul class="navbar-nav">
-                <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
-                    <a class="nav-link" href="{pboot:sitepath}/" >home</a>
-                </li>
-                {pboot:nav num=10 parent=0}
-                <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
-                    <a class="nav-link" href="[nav:link]">[nav:name]</a>
-                </li>
-                {/pboot:nav}
-            </ul>
+            </div>
             <div class="col-12 col-md-5">
             	<div class="mt-4 d-block d-md-none"></div>
             	<h5>Contacts</h5>
