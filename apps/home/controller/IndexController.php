@@ -58,7 +58,7 @@ class IndexController extends Controller
                 $search->index();
             }
         }
-        
+
         // 判断是否存在后缀
         $url_rule_suffix = substr($this->config('url_rule_suffix'), 1);
         $suffix = false;
@@ -72,7 +72,7 @@ class IndexController extends Controller
         }
         $path = escape_string($path);
         $path_arr = $path ? explode('/', $path) : array();
-        
+
         // 开始路由
         if (isset($path_arr) && count($path_arr) > 0 && preg_match('/^[\w\-\/]+$/', $path)) {
             switch (strtolower($path_arr[0])) {
@@ -308,7 +308,6 @@ class IndexController extends Controller
         if (! $data = $this->model->getAbout($sort->scode)) {
             _404('您访问的内容不存在，请核对后重试！');
         }
-        
         if ($sort->contenttpl) {
             $this->checkPageLevel($sort->gcode, $sort->gtype, $sort->gnote);
             $content = parent::parser($this->htmldir . $sort->contenttpl); // 框架标签解析
@@ -325,7 +324,6 @@ class IndexController extends Controller
         } else {
             error('请到后台设置分类栏目内容页模板！');
         }
-        
         $this->cache($content, true);
     }
 
