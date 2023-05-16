@@ -5,7 +5,7 @@
             <div class="col-12 col-md-5">
                 <ul class="navbar-nav">
                     <li class="nav-item {pboot:if(0=='{sort:scode}')}active{/pboot:if}">
-                        <a class="nav-link" href="{pboot:sitepath}/" >home</a>
+                        <h5><a class="nav-link" href="{pboot:sitepath}/" >Home</a></h5>
                     </li>
                     {pboot:nav num=10 parent=0}
                     <li class="nav-item {pboot:if('[nav:scode]'=='{sort:tcode}')}active{/pboot:if}">
@@ -26,7 +26,7 @@
                 <ul class="lh-2">
                     <li>Tel：{pboot:companyphone} </li>
                     <li>E-Mail：{pboot:companyemail} </li>
-                    <li>Address：{pboot:companyother} </li>
+                    <li>Address：{pboot:companyaddress} </li>
                 </ul>
             </div>
             <div class="col-12 col-md-2 text-center d-none d-md-block">
