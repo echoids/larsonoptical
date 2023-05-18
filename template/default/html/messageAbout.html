@@ -58,32 +58,32 @@
 		<div class="col-12 col-lg-6">
 			<form class="my-4" onsubmit="return submsg(this);">
 				<div class="form-group">
-					<label for="contacts">联系人</label>
+					<label for="contacts">Contacts</label>
 					<div>
-						<input type="text" name="contacts" required id="contacts" class="form-control" placeholder="请输入联系人">
+						<input type="text" name="contacts" required id="contacts" class="form-control">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="mobile">手　机</label>
+					<label for="mobile">Tel</label>
 					<div>
-						<input type="text" name="mobile" required id="mobile" class="form-control" placeholder="请输入联系人手机">
+						<input type="text" name="mobile" required id="mobile" class="form-control">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="content" >内　容</label>
+					<label for="content" >Content</label>
 					<div>
-						<textarea name="content" id="content" class="form-control" placeholder="请输入留言内容"></textarea>
+						<textarea name="content" id="content" class="form-control"></textarea>
 					</div>
 				</div>
 
 				{pboot:if({pboot:msgcodestatus})}
 				<div class="form-group">
-					<label for="checkcode">验证码</label>
+					<label for="checkcode">Checkcode</label>
 					<div class="row">
 						<div class="col-6">
-							<input type="text" name="checkcode" required id="checkcode" class="form-control" placeholder="请输入验证码">
+							<input type="text" name="checkcode" required id="checkcode" class="form-control">
 						</div>
 						<div class="col-6">
 							<img title="点击刷新" class="codeimg" style="height:33px;" src="{pboot:checkcode}" onclick="this.src='{pboot:checkcode}?'+Math.round(Math.random()*10);" />
@@ -93,7 +93,7 @@
 				{/pboot:if}
 
 				<div class="form-group">
-					<button type="submit" class="btn btn-info mb-2">提交留言</button>
+					<button type="submit" class="btn btn-info mb-2">Submit</button>
 				</div>
 			</form>
 		</div>
