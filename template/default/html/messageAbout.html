@@ -60,7 +60,7 @@
 				<div class="form-group">
 					<label for="contacts">*Full Name</label>
 					<div>
-						<input name="sex" type="sex" value="MR" />
+						<input name="sex" type="radio" value="MR" />
 						<input name="sex" type="radio" value="MS" />
 						<input type="text" name="contacts" required id="contacts" class="form-control">
 					</div>
@@ -119,7 +119,7 @@
 	//ajax提交留言
 	function submsg(obj){
 		var url='{pboot:msgaction}';
-		var sex=$("input[type='sex']:checked").val();
+		var sex=$("input[type='radio']:checked").val();
 		var contacts=sex+$(obj).find("#contacts").val();
 		var mobile=$(obj).find("#mobile").val();
 		var content=$(obj).find("#content").val();
