@@ -58,26 +58,38 @@
 		<div class="col-12 col-lg-6">
 			<form class="my-4" onsubmit="return submsg(this);">
 				<div class="form-group">
-					<label for="contacts">Contacts</label>
+					<label for="contacts">*Full Name</label>
 					<div>
+						<input name="sex" type="sex" value="MR" />
+						<input name="sex" type="radio" value="MS" />
 						<input type="text" name="contacts" required id="contacts" class="form-control">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="mobile">Tel</label>
+					<label for="mobile">*Tel</label>
 					<div>
 						<input type="text" name="mobile" required id="mobile" class="form-control">
 					</div>
 				</div>
-
 				<div class="form-group">
-					<label for="content" >Content</label>
+					<label for="email" >*E-Mail</label>
 					<div>
-						<textarea name="content" id="content" class="form-control"></textarea>
+						<input type="text" name="email" required id="email" class="form-control">
 					</div>
 				</div>
-
+				<div class="form-group">
+					<label for="email" >*Company</label>
+					<div>
+						<input type="text" name="company" required id="company" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" >*Questions/Comments</label>
+					<div>
+						<textarea style="width:200pxheight:100px" name="content" id="content" class="form-control"></textarea>
+					</div>
+				</div>
 				{pboot:if({pboot:msgcodestatus})}
 				<div class="form-group">
 					<label for="checkcode">Checkcode</label>
@@ -107,11 +119,13 @@
 	//ajax提交留言
 	function submsg(obj){
 		var url='{pboot:msgaction}';
-		var contacts=$(obj).find("#contacts").val();
+		var sex=$("input[type='sex']:checked").val();
+		var contacts=sex+$(obj).find("#contacts").val();
 		var mobile=$(obj).find("#mobile").val();
 		var content=$(obj).find("#content").val();
 		var checkcode=$(obj).find("#checkcode").val();
-
+		var email=$(obj).find("#email").val();
+		var company=$(obj).find("#company").val();
 		$.ajax({
 			type: 'POST',
 			url: url,
@@ -120,7 +134,8 @@
 				contacts: contacts,
 				mobile: mobile,
 				content: content,
-				checkcode: checkcode
+				email: email,
+				company: company
 			},
 			success: function (response, status) {
 				if(response.code){
